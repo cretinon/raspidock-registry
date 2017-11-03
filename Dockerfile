@@ -8,7 +8,7 @@ RUN apt-get install -y curl git mercurial make  binutils bison gcc build-essenti
 RUN curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer > /tmp/inst.sh
 RUN chmod +x /tmp/inst.sh
 RUN /tmp/inst.sh
-RUN "source /root/.gvm/scripts/gvm ; gvm install go1.4"
+RUN ["/bin/bash", "-c", ". /root/.gvm/scripts/gvm && gvm install go1.4"]
 #RUN /bin/bash -c "source /root/.gvm/scripts/gvm ; GOROOT_BOOTSTRAP=/root/.gvm/gos/go1.4/ gvm install go1.8"
 #RUN /bin/bash -c "source /root/.gvm/scripts/gvm ; gvm use go1.8 [--default]"
 #RUN cd /tmp ; git clone https://github.com/docker/distribution.git
