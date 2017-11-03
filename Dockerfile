@@ -1,4 +1,4 @@
-FROM resin/raspberrypi3-golang:1.8
+FROM resin/raspberrypi3-golang
 
 RUN [ "cross-build-start" ]
 
