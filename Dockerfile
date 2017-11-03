@@ -8,7 +8,7 @@ RUN cd /go/src/distribution ; go get -d ./...
 RUN cd /go/src/distribution ; GOOS=linux GOARCH=arm make binaries
 RUN mkdir -p /var/lib/registry
 
-EXPOSE 5500/tcp
+EXPOSE 5000/tcp
 
 CMD ["/go/src/distribution/bin/registry", "serve", "/tmp/registry-config.yml"]
 
